@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Safe Medicines in Pregnancy & Breastfeeding | Patient Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --sage: #4a7c6f;
+    --sage-light: #e8f2ef;
+    --sage-mid: #b8d4ce;
+    --sage-dark: #2d5248;
+    --amber: #c8813a;
+    --amber-light: #fdf3e7;
+    --amber-mid: #f0c98a;
+    --red: #b84040;
+    --red-light: #fdf0f0;
+    --red-mid: #e8a0a0;
+    --text: #1a2820;
+    --text-mid: #4a5a54;
+    --text-light: #8a9a94;
+    --surface: #f7faf9;
+    --white: #ffffff;
+    --border: #d8e4e0;
+    --border-light: #eef4f2;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--surface);
+    color: var(--text);
+    line-height: 1.6;
+    font-size: 16px;
+  }
+
+  /* HEADER */
+  .hero {
+    background: linear-gradient(135deg, var(--sage-dark) 0%, var(--sage) 100%);
+    color: white;
+    padding: 3rem 2rem 2.5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 200px; height: 200px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.05);
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -40px; left: -40px;
+    width: 150px; height: 150px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.04);
+  }
+  .hero-badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 100px;
+    padding: 0.35rem 1rem;
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 1.2rem;
+  }
+  .hero h1 {
+    font-family: 'Lora', serif;
+    font-size: clamp(1.7rem, 4vw, 2.4rem);
+    font-weight: 600;
+    line-height: 1.25;
+    margin-bottom: 1rem;
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero p {
+    font-size: 1rem;
+    opacity: 0.85;
+    max-width: 560px;
+    margin: 0 auto 1.5rem;
+    line-height: 1.65;
+  }
+  .hero-disclaimer {
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 10px;
+    padding: 0.9rem 1.2rem;
+    font-size: 0.84rem;
+    opacity: 0.9;
+    max-width: 560px;
+    margin: 0 auto;
+    line-height: 1.55;
+  }
+
+  /* NAV */
+  .nav-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+    padding: 1.5rem 1rem;
+    background: white;
+    border-bottom: 1px solid var(--border-light);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .nav-pill {
+    padding: 0.45rem 1.1rem;
+    border-radius: 100px;
+    border: 1.5px solid var(--border);
+    background: white;
+    font-size: 0.84rem;
+    font-weight: 500;
+    color: var(--text-mid);
+    cursor: pointer;
+    transition: all 0.2s;
+    text-decoration: none;
+  }
+  .nav-pill:hover, .nav-pill.active {
+    background: var(--sage-light);
+    border-color: var(--sage-mid);
+    color: var(--sage-dark);
+  }
+
+  /* LAYOUT */
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1.5rem 4rem;
+  }
+
+  /* SECTION */
+  .section {
+    margin-top: 3rem;
+  }
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid var(--sage-light);
+  }
+  .section-icon {
+    width: 36px; height: 36px;
+    background: var(--sage-light);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+  }
+  .section-title {
+    font-family: 'Lora', serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--sage-dark);
+  }
+  .section-sub {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    margin-top: 0.1rem;
+  }
+
+  /* SYMPTOM TABS */
+  .symptom-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .symptom-tab {
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    border: 1.5px solid var(--border);
+    background: white;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-mid);
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .symptom-tab:hover { border-color: var(--sage-mid); color: var(--sage-dark); }
+  .symptom-tab.active {
+    background: var(--sage);
+    border-color: var(--sage);
+    color: white;
+  }
+
+  /* SYMPTOM PANEL */
+  .symptom-panel { display: none; }
+  .symptom-panel.active { display: block; }
+
+  /* MEDICINE CARD */
+  .medicine-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1rem;
+  }
+  .med-card {
+    background: white;
+    border-radius: 14px;
+    border: 1.5px solid var(--border-light);
+    overflow: hidden;
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+  .med-card:hover {
+    box-shadow: 0 4px 20px rgba(45,82,72,0.1);
+    transform: translateY(-2px);
+  }
+  .med-card-header {
+    padding: 1rem 1.1rem 0.75rem;
+    border-bottom: 1px solid var(--border-light);
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+  .med-name {
+    font-family: 'Lora', serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .med-generic {
+    font-size: 0.8rem;
+    color: var(--text-light);
+    margin-top: 0.15rem;
+  }
+  .status-badge {
+    flex-shrink: 0;
+    padding: 0.25rem 0.65rem;
+    border-radius: 100px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+  }
+  .safe { background: #e8f5e9; color: #2e7d32; }
+  .caution { background: var(--amber-light); color: #8a5a1a; }
+  .avoid { background: var(--red-light); color: var(--red); }
+
+  .med-body { padding: 0.9rem 1.1rem; }
+  .med-row {
+    display: flex;
+    gap: 0.5rem;
+    font-size: 0.84rem;
+    margin-bottom: 0.5rem;
+    align-items: flex-start;
+  }
+  .med-label {
+    font-weight: 500;
+    color: var(--text-mid);
+    min-width: 36px;
+    padding-top: 0.05rem;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    flex-shrink: 0;
+  }
+  .med-row span { color: var(--text); line-height: 1.5; }
+  .icon-preg { font-size: 0.9rem; margin-right: 0.3rem; }
+
+  .med-tip {
+    background: var(--sage-light);
+    border-radius: 8px;
+    padding: 0.6rem 0.8rem;
+    font-size: 0.8rem;
+    color: var(--sage-dark);
+    margin-top: 0.75rem;
+    line-height: 1.5;
+  }
+  .med-tip::before { content: '💊 '; }
+
+  /* HERBAL SECTION */
+  .herbal-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1rem;
+  }
+  .herbal-card {
+    background: white;
+    border-radius: 14px;
+    border: 1.5px solid var(--border-light);
+    padding: 1rem 1.1rem;
+  }
+  .herbal-name {
+    font-family: 'Lora', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+  }
+  .herbal-aka {
+    font-size: 0.78rem;
+    color: var(--text-light);
+    font-style: italic;
+    margin-bottom: 0.7rem;
+  }
+  .herbal-badges {
+    display: flex;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.7rem;
+  }
+  .herbal-body { font-size: 0.83rem; color: var(--text-mid); line-height: 1.55; }
+
+  /* WHEN TO SEEK HELP */
+  .red-flag-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 0.75rem;
+  }
+  .red-flag {
+    background: var(--red-light);
+    border: 1.5px solid var(--red-mid);
+    border-radius: 12px;
+    padding: 0.9rem 1rem;
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+  }
+  .red-flag-icon {
+    font-size: 1.3rem;
+    flex-shrink: 0;
+    margin-top: 0.05rem;
+  }
+  .red-flag-text { font-size: 0.85rem; color: var(--red); line-height: 1.5; font-weight: 500; }
+
+  /* INFO BOXES */
+  .info-box {
+    background: white;
+    border: 1.5px solid var(--border-light);
+    border-radius: 14px;
+    padding: 1.2rem 1.4rem;
+    margin-bottom: 1rem;
+  }
+  .info-box.amber {
+    background: var(--amber-light);
+    border-color: var(--amber-mid);
+  }
+  .info-box.sage {
+    background: var(--sage-light);
+    border-color: var(--sage-mid);
+  }
+  .info-box h3 {
+    font-family: 'Lora', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text);
+  }
+  .info-box p, .info-box li {
+    font-size: 0.88rem;
+    color: var(--text-mid);
+    line-height: 1.6;
+  }
+  .info-box ul { padding-left: 1.2rem; }
+  .info-box li { margin-bottom: 0.3rem; }
+
+  /* LEGEND */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    background: white;
+    border: 1.5px solid var(--border-light);
+    border-radius: 12px;
+    padding: 0.9rem 1.1rem;
+    margin-bottom: 1.5rem;
+  }
+  .legend-item {
+    display: flex; align-items: center; gap: 0.5rem; font-size: 0.82rem; color: var(--text-mid);
+  }
+  .legend-dot {
+    width: 10px; height: 10px; border-radius: 50%;
+  }
+  .legend-dot.safe { background: #4caf50; }
+  .legend-dot.caution { background: var(--amber); }
+  .legend-dot.avoid { background: var(--red); }
+
+  /* KEY PRINCIPLES */
+  .principles {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+  .principle {
+    background: white;
+    border: 1.5px solid var(--border-light);
+    border-radius: 14px;
+    padding: 1.1rem;
+    text-align: center;
+  }
+  .principle-icon { font-size: 1.8rem; margin-bottom: 0.6rem; display: block; }
+  .principle h3 { font-family: 'Lora', serif; font-size: 0.95rem; font-weight: 600; margin-bottom: 0.35rem; }
+  .principle p { font-size: 0.8rem; color: var(--text-mid); line-height: 1.5; }
+
+  /* FOOTER */
+  .footer {
+    background: var(--sage-dark);
+    color: rgba(255,255,255,0.8);
+    text-align: center;
+    padding: 2rem 1.5rem;
+    font-size: 0.82rem;
+    line-height: 1.65;
+    margin-top: 4rem;
+  }
+  .footer strong { color: white; }
+
+  @media (max-width: 600px) {
+    .hero { padding: 2rem 1rem 1.5rem; }
+    .medicine-grid, .herbal-grid, .red-flag-grid, .principles {
+      grid-template-columns: 1fr;
+    }
+    .nav-pills { padding: 1rem 0.5rem; }
+  }
+
+  /* Scroll margin for anchor links */
+  .section { scroll-margin-top: 80px; }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-badge">📋 Pharmacy Patient Education Tool</div>
+  <h1>Safe Medicines in Pregnancy &amp; Breastfeeding</h1>
+  <p>A practical guide to common over-the-counter medicines and herbal products, designed to help you make safe, informed choices.</p>
+  <div class="hero-disclaimer">
+    ⚠️ <strong>Important:</strong> This guide provides general information only. Always speak with your pharmacist or doctor before taking any medicine during pregnancy or while breastfeeding.
+  </div>
+</header>
+
+<!-- STICKY NAV -->
+<nav class="nav-pills">
+  <a href="#principles" class="nav-pill">Key principles</a>
+  <a href="#symptoms" class="nav-pill">By symptom</a>
+  <a href="#herbal" class="nav-pill">Herbal products</a>
+  <a href="#redflags" class="nav-pill">When to seek help</a>
+  <a href="#tga" class="nav-pill">TGA categories</a>
+  <a href="#resources" class="nav-pill">Resources</a>
+</nav>
+
+<div class="container">
+
+  <!-- PRINCIPLES -->
+  <section class="section" id="principles">
+    <div class="section-header">
+      <div class="section-icon">🌿</div>
+      <div>
+        <div class="section-title">Key principles of self-care</div>
+        <div class="section-sub">What every pregnant or breastfeeding patient should know</div>
+      </div>
+    </div>
+    <div class="principles">
+      <div class="principle">
+        <span class="principle-icon">🤰</span>
+        <h3>Use the minimum effective dose</h3>
+        <p>Take the lowest dose that relieves your symptoms, for the shortest time needed.</p>
+      </div>
+      <div class="principle">
+        <span class="principle-icon">⏱️</span>
+        <h3>Timing matters</h3>
+        <p>Some medicines are safer in certain trimesters. Risks can differ across early, mid and late pregnancy.</p>
+      </div>
+      <div class="principle">
+        <span class="principle-icon">🌿</span>
+        <h3>Natural ≠ safe</h3>
+        <p>Herbal products can also affect your baby. Always tell your pharmacist what herbal products you use.</p>
+      </div>
+      <div class="principle">
+        <span class="principle-icon">💬</span>
+        <h3>Ask your pharmacist first</h3>
+        <p>Community pharmacists are trained to advise on medicine safety during pregnancy and breastfeeding.</p>
+      </div>
+    </div>
+
+    <div style="margin-top: 1.25rem;">
+      <div class="info-box amber">
+        <h3>About TGA pregnancy categories</h3>
+        <p>Australia uses TGA pregnancy categories (A, B1–B3, C, D, X) as a starting point for guidance. However, these categories are primarily designed for health professionals and <strong>do not account for trimester-specific risks, dose, or individual circumstances</strong>. They should not be used as the sole source of advice. Always seek a full counselling conversation with your pharmacist or doctor.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BY SYMPTOM -->
+  <section class="section" id="symptoms">
+    <div class="section-header">
+      <div class="section-icon">💊</div>
+      <div>
+        <div class="section-title">Common symptoms &amp; OTC options</div>
+        <div class="section-sub">Select a symptom to see medicines commonly considered suitable or to avoid</div>
+      </div>
+    </div>
+
+    <div class="legend">
+      <div class="legend-item"><div class="legend-dot safe"></div> Generally suitable (with advice)</div>
+      <div class="legend-item"><div class="legend-dot caution"></div> Use with caution / seek advice</div>
+      <div class="legend-item"><div class="legend-dot avoid"></div> Generally avoid</div>
+    </div>
+
+    <div class="symptom-tabs">
+      <button class="symptom-tab active" onclick="showSymptom('pain')">Pain &amp; fever</button>
+      <button class="symptom-tab" onclick="showSymptom('nausea')">Nausea &amp; vomiting</button>
+      <button class="symptom-tab" onclick="showSymptom('reflux')">Reflux &amp; heartburn</button>
+      <button class="symptom-tab" onclick="showSymptom('constipation')">Constipation</button>
+      <button class="symptom-tab" onclick="showSymptom('cold')">Colds &amp; congestion</button>
+      <button class="symptom-tab" onclick="showSymptom('allergy')">Allergies</button>
+      <button class="symptom-tab" onclick="showSymptom('sleep')">Sleep &amp; anxiety</button>
+    </div>
+
+    <!-- PAIN -->
+    <div class="symptom-panel active" id="panel-pain">
+      <div class="medicine-grid">
+        <div class="med-card">
+          <div class="med-card-header">
+            <div><div class="med-name">Paracetamol</div><div class="med-generic">e.g. Panadol</div></div>
+            <div><div class="status-badge safe">Generally safe</div></div>
+          </div>
+          <div class="med-body">
+            <div class="med-row"><span class="med-label">🤰 Preg</span><span>Preferred pain reliever in all trimesters at recommended doses. TGA Category A.</span></div>
+            <div class="med-row"><span class="med-label">🤱 BF</span><span>Compatible with breastfeeding. Small amounts pass into breast milk but considered acceptable.</span></div>
+            <div class="med-tip">Stick to the recommended dose (1–2 tabs every 4–6 hrs, max 8 tabs/day). Long-term regular use should be discussed with a doctor.</div>
+          </div>
+        </div>
+        <div class="med-card">
+          <div class="med-card-header">
+            <div><div class="med-name">Ibuprofen / NSAIDs</div><div class="med-generic">e.g. Nurofen, Voltaren</div></div>
+            <div><div class="status-badge avoid">Avoid</div></div>
+          </div>
+          <div class="med-body">
+            <div class="med-row"><span class="med-label">🤰 Preg</span><span><strong>Avoid from 20 weeks onwards.</strong> Associated with oligohydramnios and premature ductus arteriosus closure. Also avoid in first trimester if possible. TGA Category C.</span></div>
+            <div class="med-row"><span class="med-label">🤱 BF</span><span>Short-term ibuprofen use is generally considered low risk as transfer to breast milk is low. Avoid high doses or prolonged use.</span></div>
+            <div class="med-tip">Use paracetamol as first choice. If an NSAID is truly needed, this must be discussed with a doctor.</div>
+          </div>
+        </div>
+        <div class="med-card">
+          <div class="med-card-header">
+            <div><div class="med-name">Aspirin</div><div class="med-generic">e.g. Aspirin 300 mg</div></div>
+            <div><div class="status-badge avoid">Avoid (standard dose)</div></div>
+          </div>
+          <div class="med-body">
+            <div class="med-row"><span class="med-label">🤰 Preg</span><span>Standard analgesic doses should be avoided. Low-dose aspirin (100 mg) may be prescribed by a doctor for specific conditions (e.g. pre-eclampsia prevention).</span></div>
+            <div class="med-row"><span class="med-label">🤱 BF</span><span>Avoid — associated with Reye's syndrome risk in infants. Do not use unless specifically directed by a doctor.</span></div>
+            <div class="med-tip">Do not use for pain relief during pregnancy or breastfeeding without medical advice.</div>
+          </div>
+        </div>
+        <div class="med-card">
+          <div class="med-card-header">
+            <div><div class="med-name">Codeine-containing products</div><div class="med-generic">e.g. Panadeine</div></div>
+            <div><div class="status-badge avoid">Avoid</div></div>
+          </div>
+          <div class="med-body">
+            <div class="med-row"><span class="med-label">🤰 Preg</span><span>Should be avoided, particularly in late pregnancy. Can cause neonatal respiratory depression and withdrawal.</span></div>
+            <div class="med-row"><span class="med-label">🤱 BF</span><span><strong>Contraindicated.</strong> Codeine is converted to morphine — some mothers are rapid metabolisers, leading to dangerously high levels in breast milk.</span></div>
+            <div class="med-tip">Codeine is now rarely recommended during breastfeeding and is generally not available OTC without pharmacist involvement.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- NAUSEA -->
+    <div class="symptom-panel" id="panel-nausea">
+      <div class="info-box sage" style="margin-bottom:1rem;">
+        <h3>Nausea &amp; vomiting of pregnancy (NVP)</h3>
+        <p>Affects up to 80% of pregnant women. Lifestyle measures (small frequent meals, ginger, avoiding triggers) should be tried first. Refer to a GP if vomiting is severe or persistent (hyperemesis gravidarum).</p>
+      </div>
+      <div class="medicine-grid">
+        <div class="med-card">
+          <div class="med-card-header">
+            <div><div class="med-name">Ginger</div><div class="med-generic">Tablets, tea, biscuits</div></div>
+            <div><div class="status-badge safe">Generally safe</div></div>
+          </div>
+          <div class="med-body">
+            <div class="med-row"><span class="med-label">🤰 Preg</span><span>Evidence supports ginger (up to 1 g/day) for mild-to-moderate NVP. Considered safe at culinary and therapeutic doses.</span></div>
+            <div class="med-row"><span class="med-label">🤱 BF</span><span>Generally considered safe in food amounts. Limited data on high-dose supplementation.</span></div>
+            <div class="med-tip">Ginger ale, crystallised ginger, and ginger biscuits are low-risk options for mild symptoms.</div>
+          </div>
+        </div>
+        <div class="med-card">
+          <div class="med-card-header">
+            <div><div class="med-name">Doxylamine + pyridoxine</div><div class="med-generic">e.g. Mergodoxine (Rx in AU)</div></div>
+            <div><div class="status-badge caution">Refer to GP</div></div>
+          </div>
+          <div class="med-body">
+            <div class="med-row"><span class="med-label">🤰 Preg</span><span>Commonly used combination for NVP. Considered first-line pharmacological treatment. Requires a prescription in Australia.</span></div>
+            <div class="med-row"><span class="med-label">🤱 BF</span><span>Doxylamine may reduce milk supply and cause drowsiness in the infant. Generally avoided during breastfeeding.</span></div>
+            <div class="med-tip">Pharmacists should refer to a GP for prescription-level antiemetics if lifestyle measures fail.</div>
+          </div>
+        </div>
+        <div class="med-card">
+          <div class="med-card-header">
+            <div><div class="med-name">Antacids for nausea</div><div class="med-generic">e.g. Mylanta</div></div>
+            <div><div class="status-badge safe">Generally safe</div></div>
+          </div>
+          <div class="med-body">
+            <div class="med-row"><span class="med-label">🤰 Preg</span><span>Aluminium/magnesium-based antacids are generally considered safe in pregnancy when used short-term. Avoid sodium bicarbonate products.</span></div>
+            <div class="med-row"><span class="med-label">🤱 BF</span><span>Minimal systemic absorption; considered compatible with breastfeeding.</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- REFLUX -->
+    <div class="symptom-panel" id="panel-reflux">
+      <div class="info-box sage" style="margin-bottom:1rem;">
+        <h3>Reflux &amp; heartburn in pregnancy</h3>
+        <p>Very common — affects up to 80% of pregnant women, particularly in the third trimester. Lifestyle advice (small meals, avoid lying down after eating, elevate head of bed) should be recommended first.</p>
+      </div>
+      <div class="medicine-grid">
+        <div class="med-card">
+          <div class="med-card-header">
+            <div><div class="med-name">Antacids</div><div class="med-generic">Mylanta, Gaviscon, Quick-Eze</div></div>
+            <div><div class="status-badge safe">First line</div></div>
+          </div>
+          <div class="med-body">
+            <div class="med-row"><span class="med-label">🤰 Preg</span><span>Calcium carbonate and magnesium-based antacids are the preferred first line. Gaviscon (alginate-based) is particularly suitable. Avoid sodium bicarbonate (excess sodium load).</span></div>
+            <div class="med-row"><span class="med-label">🤱 BF</span><span>Minimal systemic absorption. All common antacids considered compatible with breastfeeding.</span></div>
+            <div class="med-tip">Avoid antacids containing aspirin (e.g. Alka-Seltzer) during pregnancy and breastfeeding.</div>
+          </div>
+        </div>
+        <div class="med-card">
+          <div class="med-card-header">
+            <div><div class="med-name">Ranitidine / Famotidine</div><div class="med-generic">H2 blockers</div></div>
+            <div><div class="status-badge caution">Use with caution</div></div>
+          </div>
+          <div class="med-body">
+            <div class="med-row"><span class="med-label">🤰 Preg</span><span>Famotidine is generally preferred over ranitidine (which was withdrawn). Considered low risk when antacids are insufficient — TGA Category B1.</span></div>
+            <div class="med-row"><span class="med-label">🤱 BF</span><span>Famotidine is preferred as it has lower milk transfer than cimetidine. Short-term use considered acceptable.</span></div>
+          </div>
+        </div>
+        <div class="med-card">
+          <div class="med-card-header">
+            <div><div class="med-name">PPIs (omeprazole, pantoprazole)</div><div class="med-generic">e.g. Losec, Somac</div></div>
+            <div><div class="status-badge caution">GP referral preferred</div></div>
+          </div>
+          <div class="med-body">
+            <div class="med-row"><span class="med-label">🤰 Preg</span><span>Generally reserved for severe reflux not responding to antacids/H2 blockers. Pantoprazole and omeprazole are most studied. Refer to GP.</span></div>
+            <div class="med-row"><span class="med-label">🤱 BF</span><span>Low transfer into milk; omeprazole and pantoprazole are considered compatible. Used when benefit outweighs risk.</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONSTIPATION -->
+    <div class="symptom-panel" id="panel-constipation">
+      <div class="info-box sage" style="margin-bottom:1rem;">
+        <h3>Constipation</h3>
+        <p>Common in pregnancy due to hormonal changes and iron supplementation. Recommend increased fluid intake, dietary fibre, and physical activity as first steps.</p>
+      </div>
+      <div class="medicine-grid">
+        <div class="med-card">
+          <div class="med-card-header">
+            <div><div class="med-name">Bulk-forming laxatives</div><div class="med-generic">Psyllium husk (Metamucil), ispaghula</div></div>
+            <div><div class="status-badge safe">First line</div></div>
+          </div>
+          <div class="med-body">
+            <div class="med-row"><span class="med-label">🤰 Preg</span><span>Safe throughout pregnancy. Not absorbed systemically. Important to take with plenty of water.</span></div>
+            <div class="med-row"><span class="med-label">🤱 BF</span><span>Not systemically absorbed. Compatible with breastfeeding.</span></div>
+            <div class="med-tip">Take with at least 200 mL of water to prevent oesophageal obstruction.</div>
+          </div>
+        </div>
+        <div class="med-card">
+          <div class="med-card-header">
+            <div><div class="med-name">Osmotic laxatives</div><div class="med-generic">Lactulose, Movicol, Osmolax</div></div>
+            <div><div class="status-badge safe">Generally safe</div></div>
+          </div>
+          <div class="med-body">
+            <div class="med-row"><span class="med-label">🤰 Preg</span><span>Macrogol (Movicol/Osmolax) and lactulose are considered safe. Minimal systemic absorption.</span></div>
+            <div class="med-row"><span class="med-label">🤱 BF</span><span>Compatible with breastfeeding. Not absorbed into breast milk in significant amounts.</span></div>
+          </div>
+        </div>
+        <div class="med-card">
+          <div class="med-card-header">
+            <div><div class="med-name">Stimulant laxatives</div><div class="med-generic">Senna, bisacodyl (Dulcolax)</div></div>
+            <div><div class="status-badge caution">Use with caution</div></div>
+          </div>
+          <div class="med-body">
+            <div class="med-row"><span class="med-label">🤰 Preg</span><span>Short-term use generally considered acceptable when other measures fail. Avoid in first trimester if possible and avoid prolonged use.</span></div>
+            <div class="med-row"><span class="med-label">🤱 BF</span><span>Senna passes minimally into breast milk; short-term use considered acceptable. Monitor infant for loose stools.</span></div>
+          </div>
+        </div>
+        <div class="med-card">
+          <div class="med-card-header">
+            <div><div class="med-name">Docusate (stool softener)</div><div class="med-generic">e.g. Coloxyl</div></div>
+            <div><div class="status-badge caution">Limited evidence</div></div>
+          </div>
+          <div class="med-body">
+            <div class="med-row"><span class="med-label">🤰 Preg</span><span>Limited safety data. Avoid in first trimester. Preferred laxatives (bulk-forming, osmotic) should be trialled first.</span></div>
+            <div class="med-row"><span class="med-label">🤱 BF</span><span>Minimal data. Short-term use considered low risk but prefer alternatives with more evidence.</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- COLD -->
+    <div class="symptom-panel" id="panel-cold">
+      <div class="info-box sage" style="margin-bottom:1rem;">
+        <h3>Colds, cough &amp; nasal congestion</h3>
+        <p>Most cold symptoms are self-limiting. Saline nasal spray, steam inhalation, honey (in adults), and rest are all suitable first-line options without any medicine risk.</p>
+      </div>
+      <div class="medicine-grid">
+        <div class="med-card">
+          <div class="med-card-header">
+            <div><div class="med-name">Saline nasal sprays</div><div class="med-generic">e.g. Flo Saline, Nasonex Saline</div></div>
+            <div><div class="status-badge safe">Safe and preferred</div></div>
+          </div>
+          <div class="med-body">
+            <div class="med-row"><span class="med-label">🤰 Preg</span><span>Completely safe. No systemic absorption. Recommended as first-line for nasal congestion.</span></div>
+            <div class="med-row"><span class="med-label">🤱 BF</span><span>Safe. No concerns.</span></div>
+          </div>
+        </div>
+        <div class="med-card">
+          <div class="med-card-header">
+            <div><div class="med-name">Decongestants (oral)</div><div class="med-generic">Pseudoephedrine, phenylephrine</div></div>
+            <div><div class="status-badge avoid">Generally avoid</div></div>
+          </div>
+          <div class="med-body">
+            <div class="med-row"><span class="med-label">🤰 Preg</span><span><strong>Avoid</strong> — particularly in the first trimester. Pseudoephedrine has been associated with abdominal wall defects. Avoid in all trimesters where possible.</span></div>
+            <div class="med-row"><span class="med-label">🤱 BF</span><span>Pseudoephedrine can reduce milk supply and passes into breast milk. Best avoided during breastfeeding.</span></div>
+            <div class="med-tip">Use saline sprays or steam inhalation instead. Short-term intranasal decongestants (e.g. oxymetazoline) may be preferable to oral decongestants if absolutely needed — discuss with pharmacist.</span>
+          </div>
+        </div>
+        <div class="med-card">
+          <div class="med-card-header">
+            <div><div class="med-name">Oxymetazoline (nasal)</div><div class="med-generic">e.g. Drixine, Otrivin</div></div>
+            <div><div class="status-badge caution">Short-term only</div></div>
+          </div>
+          <div class="med-body">
+            <div class="med-row"><span class="med-label">🤰 Preg</span><span>Lower systemic absorption than oral decongestants. Short-term use (max 3 days) may be considered if nasal congestion significantly affects sleep or eating. Avoid prolonged use.</span></div>
+            <div class="med-row"><span class="med-label">🤱 BF</span><span>Low systemic absorption; generally considered preferable to oral decongestants for short-term use.</span></div>
+          </div>
+        </div>
+        <div class="med-card">
+          <div class="med-card-header">
+            <div><div class="med-name">Cough syrups (dextromethorphan)</div><div class="med-generic">e.g. Robitussin DM</div></div>
+            <div><div class="status-badge caution">Use with caution</div></div>
+          </div>
+          <div class="med-body">
+            <div class="med-row"><span class="med-label">🤰 Preg</span><span>Limited data. Generally avoided in first trimester. Short-term use may be considered in later pregnancy for distressing cough — discuss with pharmacist.</span></div>
+            <div class="med-row"><span class="med-label">🤱 BF</span><span>Limited data on transfer to breast milk. Honey and non-medicated lozenges preferred for cough.</span></div>
+            <div class="med-tip">Avoid combination cold/flu products containing multiple ingredients — risk-benefit is harder to assess. Single-ingredient products are always preferred.</div>
+          </div>
+        </div>
+        <div class="med-card">
+          <div class="med-card-header">
+            <div><div class="med-name">Guaifenesin (expectorant)</div><div class="med-generic">e.g. Robitussin Chesty Cough</div></div>
+            <div><div class="status-badge caution">Avoid first trimester</div></div>
+          </div>
+          <div class="med-body">
+            <div class="med-row"><span class="med-label">🤰 Preg</span><span>Avoid in first trimester (some animal data of concern). Limited human data. May be used cautiously in second/third trimester if benefit clear.</span></div>
+            <div class="med-row"><span class="med-label">🤱 BF</span><span>Limited data. Staying hydrated is equally effective for most people.</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ALLERGY -->
+    <div class="symptom-panel" id="panel-allergy">
+      <div class="medicine-grid">
+        <div class="med-card">
+          <div class="med-card-header">
+            <div><div class="med-name">Loratadine</div><div class="med-generic">e.g. Claratyne</div></div>
+            <div><div class="status-badge safe">Preferred antihistamine</div></div>
+          </div>
+          <div class="med-body">
+            <div class="med-row"><span class="med-label">🤰 Preg</span><span>Preferred oral antihistamine in pregnancy. Non-sedating. Most studied of the second-generation antihistamines. TGA Category B1.</span></div>
+            <div class="med-row"><span class="med-label">🤱 BF</span><span>Low transfer to breast milk. Considered compatible. Monitor infant for any unusual drowsiness.</span></div>
+          </div>
+        </div>
+        <div class="med-card">
+          <div class="med-card-header">
+            <div><div class="med-name">Cetirizine</div><div class="med-generic">e.g. Zyrtec</div></div>
+            <div><div class="status-badge safe">Generally suitable</div></div>
+          </div>
+          <div class="med-body">
+            <div class="med-row"><span class="med-label">🤰 Preg</span><span>Considered acceptable. Non-sedating second-generation antihistamine. TGA Category B2. Loratadine is often preferred as first choice due to slightly more safety data.</span></div>
+            <div class="med-row"><span class="med-label">🤱 BF</span><span>Some transfer to breast milk. Generally considered compatible. Monitor infant for drowsiness.</span></div>
+          </div>
+        </div>
+        <div class="med-card">
+          <div class="med-card-header">
+            <div><div class="med-name">Promethazine / older antihistamines</div><div class="med-generic">e.g. Phenergan</div></div>
+            <div><div class="status-badge caution">Use with caution</div></div>
+          </div>
+          <div class="med-body">
+            <div class="med-row"><span class="med-label">🤰 Preg</span><span>Sedating first-generation antihistamines. Generally avoided in late pregnancy due to neonatal effects. TGA Category C. Prefer loratadine.</span></div>
+            <div class="med-row"><span class="med-label">🤱 BF</span><span>Avoid — sedating antihistamines are associated with infant apnoea risk in breastfed babies, especially newborns and premature infants.</span></div>
+            <div class="med-tip"><strong>Important:</strong> Sedating antihistamines (e.g. promethazine) should be avoided in breastfeeding mothers of newborns or premature babies due to risk of infant apnoea.</div>
+          </div>
+        </div>
+        <div class="med-card">
+          <div class="med-card-header">
+            <div><div class="med-name">Intranasal corticosteroids</div><div class="med-generic">e.g. Nasonex, Flixonase</div></div>
+            <div><div class="status-badge safe">Preferred for allergic rhinitis</div></div>
+          </div>
+          <div class="med-body">
+            <div class="med-row"><span class="med-label">🤰 Preg</span><span>Budesonide nasal spray is the preferred intranasal corticosteroid in pregnancy (most safety data). Considered low risk with minimal systemic absorption.</span></div>
+            <div class="med-row"><span class="med-label">🤱 BF</span><span>Minimal systemic absorption. All intranasal corticosteroids considered compatible with breastfeeding.</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLEEP -->
+    <div class="symptom-panel" id="panel-sleep">
+      <div class="info-box amber" style="margin-bottom:1rem;">
+        <h3>Sleep disturbance &amp; anxiety</h3>
+        <p>Sleep difficulties are very common in pregnancy. Non-pharmacological strategies should always be the first approach: sleep hygiene, relaxation techniques, cognitive behavioural therapy for insomnia (CBTi), and psychological support. If symptoms are severe, refer to a GP or mental health professional.</p>
+      </div>
+      <div class="medicine-grid">
+        <div class="med-card">
+          <div class="med-card-header">
+            <div><div class="med-name">Melatonin</div><div class="med-generic">e.g. Circadin (now Rx in AU)</div></div>
+            <div><div class="status-badge caution">Limited data</div></div>
+          </div>
+          <div class="med-body">
+            <div class="med-row"><span class="med-label">🤰 Preg</span><span>Melatonin is produced naturally, but supplemental doses have limited safety data in pregnancy. Now prescription-only in Australia. Refer to GP.</span></div>
+            <div class="med-row"><span class="med-label">🤱 BF</span><span>Natural melatonin is present in breast milk. Supplemental melatonin data is limited. Discuss with GP before use.</span></div>
+          </div>
+        </div>
+        <div class="med-card">
+          <div class="med-card-header">
+            <div><div class="med-name">Diphenhydramine</div><div class="med-generic">e.g. Restavit, Unisom</div></div>
+            <div><div class="status-badge avoid">Avoid</div></div>
+          </div>
+          <div class="med-body">
+            <div class="med-row"><span class="med-label">🤰 Preg</span><span>OTC sleep aids containing sedating antihistamines. Not recommended as a routine sleep aid in pregnancy — especially late pregnancy. Avoid without GP guidance.</span></div>
+            <div class="med-row"><span class="med-label">🤱 BF</span><span>Avoid — sedating antihistamines in breast milk may cause infant apnoea, especially in newborns and premature babies.</span></div>
+          </div>
+        </div>
+        <div class="med-card">
+          <div class="med-card-header">
+            <div><div class="med-name">Lavender / aromatherapy</div><div class="med-generic">Topical/diffuser use</div></div>
+            <div><div class="status-badge safe">Topical use generally safe</div></div>
+          </div>
+          <div class="med-body">
+            <div class="med-row"><span class="med-label">🤰 Preg</span><span>Aromatherapy with lavender (external use, well-ventilated space) is generally considered low risk. Avoid ingestion of essential oils.</span></div>
+            <div class="med-row"><span class="med-label">🤱 BF</span><span>Topical or diffused lavender considered low risk. Avoid applying essential oils directly to nipples or areas in contact with infant's skin/mouth.</span></div>
+            <div class="med-tip">Never ingest essential oils. High concentration topical use should be avoided near the infant's face.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HERBAL PRODUCTS -->
+  <section class="section" id="herbal">
+    <div class="section-header">
+      <div class="section-icon">🌱</div>
+      <div>
+        <div class="section-title">Herbal products</div>
+        <div class="section-sub">What to know before using herbal remedies during pregnancy or breastfeeding</div>
+      </div>
+    </div>
+    <div class="info-box amber" style="margin-bottom:1.25rem;">
+      <h3>⚠️ Remember: natural does not mean safe</h3>
+      <p>Many patients assume herbal products are safe because they are "natural." However, herbal products can contain pharmacologically active compounds that may affect the baby, interact with medicines, or stimulate uterine contractions. Always tell your pharmacist about any herbal products you are using.</p>
+    </div>
+    <div class="herbal-grid">
+
+      <div class="herbal-card">
+        <div class="herbal-name">Ginger</div>
+        <div class="herbal-aka">Zingiber officinale</div>
+        <div class="herbal-badges">
+          <span class="status-badge safe">Pregnancy: generally safe</span>
+          <span class="status-badge safe">Breastfeeding: likely safe</span>
+        </div>
+        <div class="herbal-body">Evidence supports use for NVP at ≤1 g/day. Culinary amounts are unquestionably safe. High-dose supplements have limited data. Avoid doses above 1 g/day in pregnancy without advice.</div>
+      </div>
+
+      <div class="herbal-card">
+        <div class="herbal-name">Echinacea</div>
+        <div class="herbal-aka">Echinacea purpurea / angustifolia</div>
+        <div class="herbal-badges">
+          <span class="status-badge caution">Pregnancy: uncertain</span>
+          <span class="status-badge caution">Breastfeeding: uncertain</span>
+        </div>
+        <div class="herbal-body">Commonly used for cold/flu prevention. Limited human data in pregnancy. Some studies suggest it is low risk in first trimester, but evidence is insufficient to make a clear recommendation. Advise caution and GP discussion.</div>
+      </div>
+
+      <div class="herbal-card">
+        <div class="herbal-name">St John's Wort</div>
+        <div class="herbal-aka">Hypericum perforatum</div>
+        <div class="herbal-badges">
+          <span class="status-badge avoid">Pregnancy: avoid</span>
+          <span class="status-badge avoid">Breastfeeding: avoid</span>
+        </div>
+        <div class="herbal-body">May interact with many medicines (serotonin syndrome risk, reduces efficacy of oral contraceptives, anticoagulants). Associated with neonatal withdrawal symptoms. Transfers to breast milk and may cause infant colic, drowsiness, or poor feeding.</div>
+      </div>
+
+      <div class="herbal-card">
+        <div class="herbal-name">Raspberry leaf</div>
+        <div class="herbal-aka">Rubus idaeus</div>
+        <div class="herbal-badges">
+          <span class="status-badge avoid">Pregnancy: avoid until term</span>
+          <span class="status-badge caution">Breastfeeding: uncertain</span>
+        </div>
+        <div class="herbal-body">Traditionally used to "prepare" the uterus for labour in late pregnancy. May stimulate uterine contractions — <strong>do not use before 37 weeks</strong>. No robust clinical evidence for efficacy. Advise against use in first and second trimester.</div>
+      </div>
+
+      <div class="herbal-card">
+        <div class="herbal-name">Chamomile</div>
+        <div class="herbal-aka">Matricaria chamomilla</div>
+        <div class="herbal-badges">
+          <span class="status-badge caution">Pregnancy: caution</span>
+          <span class="status-badge caution">Breastfeeding: caution</span>
+        </div>
+        <div class="herbal-body">Occasional chamomile tea (food amounts) is generally considered low risk. Concentrated supplements or frequent high-dose use should be avoided — emmenagogue properties reported at high doses. Limited safety data for breastfeeding.</div>
+      </div>
+
+      <div class="herbal-card">
+        <div class="herbal-name">Fenugreek</div>
+        <div class="herbal-aka">Trigonella foenum-graecum</div>
+        <div class="herbal-badges">
+          <span class="status-badge avoid">Pregnancy: avoid</span>
+          <span class="status-badge caution">Breastfeeding: caution</span>
+        </div>
+        <div class="herbal-body">Widely used by breastfeeding mothers to boost milk supply, but evidence is mixed and it has uterine-stimulating properties — <strong>avoid in pregnancy</strong>. May cause GI side effects in mother and infant. Discuss with a pharmacist before use.</div>
+      </div>
+
+      <div class="herbal-card">
+        <div class="herbal-name">Peppermint</div>
+        <div class="herbal-aka">Mentha × piperita</div>
+        <div class="herbal-badges">
+          <span class="status-badge caution">Pregnancy: food amounts OK</span>
+          <span class="status-badge caution">Breastfeeding: caution</span>
+        </div>
+        <div class="herbal-body">Peppermint tea/food in normal amounts is generally considered safe. High-dose peppermint oil supplements should be avoided. Peppermint may reduce milk supply — often advised to avoid during breastfeeding, particularly concentrated forms.</div>
+      </div>
+
+      <div class="herbal-card">
+        <div class="herbal-name">Valerian</div>
+        <div class="herbal-aka">Valeriana officinalis</div>
+        <div class="herbal-badges">
+          <span class="status-badge avoid">Pregnancy: avoid</span>
+          <span class="status-badge avoid">Breastfeeding: avoid</span>
+        </div>
+        <div class="herbal-body">Commonly used for sleep and anxiety. Insufficient safety data in pregnancy and breastfeeding. Some alkaloids may be teratogenic at high doses in animal models. Advise avoidance until safer alternatives are explored.</div>
+      </div>
+
+      <div class="herbal-card">
+        <div class="herbal-name">Garlic (supplement doses)</div>
+        <div class="herbal-aka">Allium sativum</div>
+        <div class="herbal-badges">
+          <span class="status-badge safe">Food amounts: safe</span>
+          <span class="status-badge caution">High-dose supplements: caution</span>
+        </div>
+        <div class="herbal-body">Dietary garlic is safe and has no concerns. High-dose garlic supplements may inhibit platelet aggregation — advise against use near delivery. Limited breastfeeding data at supplement doses; may affect milk flavour.</div>
+      </div>
+
+      <div class="herbal-card">
+        <div class="herbal-name">Slippery elm</div>
+        <div class="herbal-aka">Ulmus rubra</div>
+        <div class="herbal-badges">
+          <span class="status-badge avoid">Pregnancy: avoid</span>
+          <span class="status-badge caution">Breastfeeding: uncertain</span>
+        </div>
+        <div class="herbal-body">Sometimes used for reflux or nausea. Traditionally regarded as a potential abortifacient — insufficient evidence to establish safety in pregnancy. Advise against use until more data is available.</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- WHEN TO SEEK HELP -->
+  <section class="section" id="redflags">
+    <div class="section-header">
+      <div class="section-icon">🚨</div>
+      <div>
+        <div class="section-title">When to seek medical help</div>
+        <div class="section-sub">Signs that require a doctor visit rather than self-care</div>
+      </div>
+    </div>
+    <div class="red-flag-grid">
+      <div class="red-flag"><div class="red-flag-icon">🌡️</div><div class="red-flag-text">Fever above 38°C in pregnancy — see a GP promptly</div></div>
+      <div class="red-flag"><div class="red-flag-icon">🤮</div><div class="red-flag-text">Severe nausea/vomiting preventing eating or drinking (hyperemesis gravidarum)</div></div>
+      <div class="red-flag"><div class="red-flag-icon">💊</div><div class="red-flag-text">Pain not responding to paracetamol within 24 hours</div></div>
+      <div class="red-flag"><div class="red-flag-icon">👶</div><div class="red-flag-text">Reduced fetal movement (after 28 weeks) — seek urgent review</div></div>
+      <div class="red-flag"><div class="red-flag-icon">🩸</div><div class="red-flag-text">Any vaginal bleeding during pregnancy</div></div>
+      <div class="red-flag"><div class="red-flag-icon">😮‍💨</div><div class="red-flag-text">Shortness of breath, chest pain, or severe headache</div></div>
+      <div class="red-flag"><div class="red-flag-icon">👁️</div><div class="red-flag-text">Visual disturbances, sudden severe swelling — may indicate pre-eclampsia</div></div>
+      <div class="red-flag"><div class="red-flag-icon">🤱</div><div class="red-flag-text">Signs of mastitis: breast pain, redness, fever — see GP, may need antibiotics</div></div>
+      <div class="red-flag"><div class="red-flag-icon">😟</div><div class="red-flag-text">Persistent low mood, anxiety, or feeling unable to cope — perinatal mental health support available</div></div>
+      <div class="red-flag"><div class="red-flag-icon">💊</div><div class="red-flag-text">You need medicine for a condition not listed here — always check with your pharmacist or GP first</div></div>
+    </div>
+  </section>
+
+  <!-- TGA CATEGORIES -->
+  <section class="section" id="tga">
+    <div class="section-header">
+      <div class="section-icon">📑</div>
+      <div>
+        <div class="section-title">Understanding TGA pregnancy categories</div>
+        <div class="section-sub">A reference for interpreting Australian medicine classifications</div>
+      </div>
+    </div>
+    <div class="info-box amber" style="margin-bottom: 1rem;">
+      <h3>Important limitation</h3>
+      <p>TGA categories describe risk based on available evidence but do not account for trimester-specific risks, maternal dose, duration of use, or individual patient factors. They are a starting point — not a complete safety assessment. The TGA itself advises that these categories should not be the sole basis for clinical decisions.</p>
+    </div>
+    <div style="display:grid; gap: 0.75rem;">
+      <div class="info-box sage">
+        <h3>Category A</h3>
+        <p>Drugs taken by a large number of pregnant women without proven increase in malformations or harmful effects. Examples: paracetamol, folic acid, iron.</p>
+      </div>
+      <div class="info-box sage">
+        <h3>Category B1 / B2 / B3</h3>
+        <p>Drugs taken by limited numbers of pregnant women. No increased frequency of malformations observed in humans. Animal data varies (B1 = no harm; B2 = limited animal data; B3 = some animal harm but unclear human relevance). Examples: loratadine (B1), cetirizine (B2), famotidine (B1).</p>
+      </div>
+      <div class="info-box">
+        <h3>Category C</h3>
+        <p>Drugs that have caused or may be suspected of causing reversible effects in the fetus without causing malformations. Long-term effects uncertain. These should only be used if benefit outweighs risk. Examples: promethazine, some decongestants.</p>
+      </div>
+      <div class="info-box" style="border-color: var(--amber-mid); background: var(--amber-light);">
+        <h3>Category D</h3>
+        <p>Evidence of increased risk of fetal malformations or irreversible damage. May still be used in life-threatening conditions. Examples: some antiepileptics, ACE inhibitors in second/third trimester.</p>
+      </div>
+      <div class="info-box" style="border-color: var(--red-mid); background: var(--red-light);">
+        <h3>Category X</h3>
+        <p>High risk of permanent damage. Contraindicated in pregnancy. Examples: thalidomide, isotretinoin (Roaccutane), misoprostol (for abortion induction).</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESOURCES -->
+  <section class="section" id="resources">
+    <div class="section-header">
+      <div class="section-icon">🔗</div>
+      <div>
+        <div class="section-title">Reliable resources</div>
+        <div class="section-sub">For patients and healthcare professionals in Australia</div>
+      </div>
+    </div>
+    <div class="medicine-grid">
+      <div class="info-box">
+        <h3>Mothersafe (NSW)</h3>
+        <p>A clinical service providing expert advice on medicine and substance exposure during pregnancy and breastfeeding. Pharmacists and patients can call for guidance.<br><br><strong>📞 1800 647 848</strong></p>
+      </div>
+      <div class="info-box">
+        <h3>LactMed (NLM)</h3>
+        <p>Free US National Library of Medicine database covering drug and supplement safety in breastfeeding. Highly detailed, evidence-based, regularly updated.<br><br><strong>🌐 toxnet.nlm.nih.gov/lactmed</strong></p>
+      </div>
+      <div class="info-box">
+        <h3>e-Therapeutics+ / AMH</h3>
+        <p>Australian Medicines Handbook — preferred professional reference for Australian context. Includes pregnancy and lactation guidance for most medicines.</p>
+      </div>
+      <div class="info-box">
+        <h3>MIMS Online</h3>
+        <p>Australian drug reference database. Product information leaflets include pregnancy and lactation details from the manufacturer.</p>
+      </div>
+      <div class="info-box">
+        <h3>Pregnancy, Birth &amp; Baby</h3>
+        <p>Australian Government-backed service with midwife and nurse support for parents and expectant families.<br><br><strong>📞 1800 882 436</strong></p>
+      </div>
+      <div class="info-box">
+        <h3>Australian Prescriber</h3>
+        <p>Peer-reviewed, free-access journal with articles on medicine safety in pregnancy and lactation. Useful for in-depth clinical reading.</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <strong>Pregnancy &amp; Breastfeeding Medicine Safety Guide</strong><br>
+  Developed as a pharmacy patient education tool · Information current as of 2025 · Australian context<br><br>
+  This resource is for general education only and does not replace professional advice. Always consult your pharmacist or doctor before taking any medicine during pregnancy or breastfeeding.<br><br>
+  <em>References: Australian Medicines Handbook, LactMed (NLM), Mothersafe, TGA pregnancy categories, Australian Prescriber, ADEC guidelines.</em>
+</footer>
+
+<script>
+  function showSymptom(id) {
+    document.querySelectorAll('.symptom-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.symptom-tab').forEach(t => t.classList.remove('active'));
+    document.getElementById('panel-' + id).classList.add('active');
+    event.target.classList.add('active');
+  }
+
+  // Smooth scroll for nav pills
+  document.querySelectorAll('.nav-pill').forEach(pill => {
+    pill.addEventListener('click', function(e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth' });
+        document.querySelectorAll('.nav-pill').forEach(p => p.classList.remove('active'));
+        this.classList.add('active');
+      }
+    });
+  });
+</script>
+</body>
+</html>
